@@ -1,0 +1,22 @@
+project_board_base.pyimport json
+from abc import ABC,
+abstractmethod
+class ProjectBoardBase(ABC):
+      @abstractmethod
+      def create_board(self,request:str)->str:
+      pass
+      @abstractmethod
+      def close_board(self,request:str)->str:
+      pass
+      @abstractmethod
+      def add_task(self,request:st)->str:
+      pass
+      @abstractmethod
+      def update_task_status(self,request:str)->str:
+      pass
+      @abstractmethod
+      def list_board(self,request:str)->str:
+      pass
+      @abstractmethod
+      def export_board(self,request:str)->str:
+      pass
