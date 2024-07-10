@@ -1,0 +1,29 @@
+from.base import TeamManager
+from.persistance import
+load_data,save_data
+
+class
+TeamManagerImpl(TeamManager):
+    def__init_-(self,db_file):
+            self.db_file=db_file
+            self.teams=load_data(self.db_file) or {}
+   def create_team(self,team_data):
+            team_id=str(len(self,teams)+1)
+            self.teams[team_id]=team_data
+            save_data(self,db_file,self.teams)
+            return team_id
+   def update_team(self,team_id,team_data):
+            if team_id in self.teams:
+                    self.teams[teams_id].update(team_data)
+                    save_data(self.db_file,self.teams)
+            else:
+                raise
+                    ValueError("Team not found")
+  def add_member(self,team_id,user_id):
+            if team_id in self.teams:
+               self.teams[team_id].setdefault('member',[]).append(user_id)
+               save_data(self.db_file,self.teams)
+            else:
+                raise
+                  ValueError("Team not found")
+          
